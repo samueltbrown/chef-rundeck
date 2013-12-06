@@ -24,9 +24,9 @@ default['rundeck']['deb_version']       = '1.5.3-1-GA'
 default['rundeck']['deb_url']           = "http://download.rundeck.org/deb/rundeck-#{node['rundeck']['deb_version']}.deb"
 default['rundeck']['deb_checksum']      = '314b68c3ad25a29986efb76861cba1993023614d3981d5043f34cdbfe4bf267b'
 
-default['rundeck']['rpm_version']       = '1.5.3-1.2.GA'
-default['rundeck']['rpm_url']           = "http://download.rundeck.org/rpm/rundeck-#{node['rundeck']['rpm_version']}.noarch.rpm"
-default['rundeck']['rpm_cfg_url']       = "http://download.rundeck.org/rpm/rundeck-config-#{node['rundeck']['rpm_version']}.noarch.rpm"
+default['rundeck']['rpm_version']       = '2.0.0-0.129.SNAPSHOT'
+default['rundeck']['rpm_url']           = "https://dl.bintray.com/gschueler/ci-rundeck2-rpm/rundeck-#{node['rundeck']['rpm_version']}.noarch.rpm"
+default['rundeck']['rpm_cfg_url']       = "https://dl.bintray.com/gschueler/ci-rundeck2-rpm/rundeck-config-#{node['rundeck']['rpm_version']}.noarch.rpm"
 default['rundeck']['rpm_checksum']      = '5ac04847bdd8f3926822892db6ddcb0d7239f9aabffdd502270033064dae9d93'
 default['rundeck']['rpm_cfg_checksum']  = '73ffee35c909a9efb482019e1f5aedfb6b8d919a9d35363b8c2cfb0b9192d59e'
 
@@ -43,7 +43,7 @@ default['rundeck']['admin']['data_bag']           = 'credentials'
 default['rundeck']['admin']['data_bag_id']        = 'rundeck'
 # For Solo runs with no data bags
 default['rundeck']['admin']['username']           = 'admin'
-default['rundeck']['admin']['password']           = 'a73e319b433528eaa646' # Override this!
+default['rundeck']['admin']['password']           = 'password1234!' # Override this!
 default['rundeck']['admin']['ssh_key']            = ''
 
 

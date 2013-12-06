@@ -21,19 +21,21 @@
   
 Vagrant.configure('2') do |config|
 
+  config.cache.auto_detect = true
   config.berkshelf.enabled = true
-  config.ssh.max_tries = 40
-  config.ssh.timeout   = 120
 
-  config.vm.provider :virtualbox do |v|
-    v.gui = true
+  config.vm.provider :virtualbox do |vb|
+    vb.customize ["modifyvm", :id, "--memory", "2048"]
   end
 
-  config.vm.box = 'ubuntu'
+  config.vm.box = 'rhel63-latest'
   config.vm.hostname = 'rundeck'
-  config.vm.network :private_network, ip: '172.16.6.2'
+  config.vm.network :private_network, ip: '33.33.33.10'
+  config.vm.network :forwarded_port, guest: 80, host: 9000
+  config.vm.network :forwarded_port, guest: 4440, host: 4440
+  
   config.vm.provision :chef_solo do |chef|
-    chef.arguments = '-Fdoc'
+
     chef.json = { 
       'java' => { 
         'oracle' => {

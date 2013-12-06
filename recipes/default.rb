@@ -50,7 +50,7 @@ when 'rhel'
 		group 'root'
 		mode 00644
 		source node['rundeck']['rpm_cfg_url']
-		checksum node['rundeck']['rpm_cfg_checksum']
+		#checksum node['rundeck']['rpm_cfg_checksum']
 		action :create
 	end
 
@@ -59,7 +59,7 @@ when 'rhel'
 		group 'root'
 		mode 00644
 		source node['rundeck']['rpm_url']
-		checksum node['rundeck']['rpm_checksum']
+		#checksum node['rundeck']['rpm_checksum']
 		action :create
 	end
 
